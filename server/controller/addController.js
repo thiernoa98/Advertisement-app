@@ -1,79 +1,9 @@
 const nodemailer = require('nodemailer');
 const mailGen = require('mailgen');
-//bringin schema
 const Add = require('../model/addSchema');
-
-//create the order function
-//might not use it
-// async function placeOrder(req,res) {
-//     try {
-//         //create the order, get user info and all
-//         const {firstName,lastName,email,businessName,partnerName} = req.body;
-
-//         //build the order
-//         let newOrderObj = {
-//             firstName: firstName,
-//             lastName: lastName,
-//             email: email,
-//             businessName: businessName,
-//             partnerName:partnerName
-//         }
-//         //create and save
-//         await Add.create(newOrderObj);
-//         res.json({
-//             message: 'success',
-//             payload: newOrderObj
-//         })
-//     } catch (error) {
-//         let errorObj = {
-//             message: 'failed to create an order',
-//             payload: error
-//         } 
-
-//         console.log(errorObj);
-//         res.json({errorObj})
-//     }
-// }
-
 const myEmail = process.env.SENDER_EMAIL;
 const myPass = process.env.GMAIL_APP_PASSWORD
 
-//{receiver_email, subject, message}
-// async function sendEmail({client_email, subject, message}) {
-
-//     return new Promise((resolve, reject)=>{
-//         let transporter = nodemailer.createTransport({
-//             service: 'gmail',
-//             auth: {
-//                 user: myEmail,
-//                 pass: myPass //application password that permit us to use gmail
-//             }
-//         })
-
-//         const mailConfig = {
-//             from: client_email,
-//             to: myEmail,
-//             subject: subject,
-//             text: message
-//         };
-
-//         transporter.sendMail(mailConfig, function (error, info) {
-//             if (error) {
-//                 console.log(error);
-//                 return reject({message: 'an error occured when sending email'})
-//             }else{
-//                 return resolve({message: 'email sent successfully'})
-//             }
-
-//         })
-
-
-
-//     })
-// }
-
-
-//not fully funtional as it only send emails from me
 async function sendEmail(req,res) {
     try {
         let {client_fname, client_lname, client_email, subject, message} = req.body;
@@ -92,7 +22,6 @@ async function sendEmail(req,res) {
             product: {
                 name: 'Nile Add',
                 link: 'https://mailgen.js/',
-                // logo: ''
             }
         })
 
@@ -151,7 +80,6 @@ async function getAllPartners(req, res) {
             payload: data
         })
         
-        // console.log('data: ', data);
     } catch (error) {
         let errorObj = {
             message: 'failed to get partners',
@@ -164,7 +92,7 @@ async function getAllPartners(req, res) {
     }
 }
 
-//geetting the info about one partner by there id
+//getting the info about one partner by there id
 async function getOnePartner(req,res) {
     try {
         let foundPartner = await Add.findOne({_id: req.params._id});
@@ -185,7 +113,7 @@ async function getOnePartner(req,res) {
         res.json({errorObj});
     }
 }
-//fully functonal
+
 //confirmation email
 async function confirmationEmail(req,res) {
     try {
@@ -224,11 +152,7 @@ async function confirmationEmail(req,res) {
                             Phone_number: client_phone,
                             offered_price: client_price
                         },
-                        // {
-                        //     item: 'cleancoder',
-                        //     description: 'A programming book to help you code better',
-                        //     price: '$50.91'
-                        // }
+
                     ]
                 },
                 outro: `loking forward to doing more business with you ${client_fname}`
