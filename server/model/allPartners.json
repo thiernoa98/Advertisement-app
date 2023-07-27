@@ -1,0 +1,30 @@
+[
+    {
+        "partnerNo": 1,
+        "Name": "Microsoft",
+        "About": "Microsoft is the largest vendor of computer software in the world. It is also a leading provider of cloud computing services, video games, computer and gaming hardware, search and other online services. Microsoft's corporate headquarters is located in Redmond, Wash., and it has offices in more than 60 countries.",
+        "Followers":"15.6M Followers", 
+        "img": "https://adoption.microsoft.com/wp-content/uploads/2022/10/microsoft-logo.png"
+    },
+    {
+        "partnerNo": 2,
+        "Name": "Google",
+        "About": "Google LLC is an American multinational technology company focusing on artificial intelligence, online advertising and search engine technology. There are approximately 395 million monthly active users on Google",
+        "Followers":"14.2M Followers",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/800px-Google_2015_logo.svg.png" 
+    },
+    {
+        "partnerNo": 3,
+        "Name": "Apple",
+        "About": "Apple is the world's largest technology company by revenue, with US$394.3 billion in 2022 revenue. As of March 2023, Apple is the world's biggest company by market capitalization.",
+        "Followers":"33.1M Followers",
+        "img": "https://images.indianexpress.com/2022/07/Apple-VR-AR-headset-featured.jpg" 
+    },
+    {
+        "partnerNo": 4,
+        "Name": "Meta",
+        "About": "An American multinational technology conglomerate based in Menlo Park, California. The company owns Facebook, Instagram, and WhatsApp, among other products and services.",
+        "Followers":"1.3b Followers",
+        "img": "https://www.analyticsinsight.net/wp-content/uploads/2022/11/The-Latest-Innovations-That-Meta-Has-Come-Up-with-in-2022-1.jpg" 
+    }
+]
